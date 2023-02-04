@@ -45,10 +45,11 @@ describe("Booking tickets test", () => {
     await clickElement(page, "[data-seance-id='94']");
     await page.waitForTimeout(2000);
     await selectUnavailabilityPlace(page);
-    const time = "[class = 'acceptin-button']";
-    const actual = await page.$eval(time, link => link.getAttribute('disabled'));
+    const btn = "[class = 'acceptin-button']";
+    const actual = await page.$eval(btn, link => link.getAttribute('disabled'));
 
     expect(actual).toEqual('true');
   }, 20000);
+
 
 });
